@@ -1,0 +1,5 @@
+/Users/Rook/Desktop/FirstCProg/FirstCProg/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/Rook/Desktop/FirstCProg/FirstCProg/bin/Debug/FirstCProg.exe.mdb
+/Users/Rook/Desktop/FirstCProg/FirstCProg/bin/Debug/FirstCProg.exe
+/Users/Rook/Desktop/FirstCProg/FirstCProg/obj/x86/Debug/FirstCProg.exe
+/Users/Rook/Desktop/FirstCProg/FirstCProg/obj/x86/Debug/FirstCProg.exe.mdb
