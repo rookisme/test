@@ -1,0 +1,143 @@
+package testingapps;
+public class Robots {
+    
+    //INSTANCE VARIABLES HERE~~~~!
+        private int x;
+        private int y;
+        //ZERO ARGUMENT CONSTRUCTER~~!
+        public Robots() {
+            x = 1;
+            y = 1;
+        }
+        //TWO ARGUMENT CONSTRUCTER~~!
+        public Robots (int xPosi, int yPosi) {
+            xPosi = x;
+            yPosi = y;
+        }
+
+    //methods begins here~~~~!
+        public void goNorth() {
+            y = y +1;
+        }
+        public void goSouth() {
+            y = y -1;
+        }
+        public void goEast() {
+            x = x + 1;
+        }
+        public void goWest() {
+            x = x-1;
+        }
+        public void setX(int xPos) {
+            xPos = x;
+        }
+        public void setY(int yPos) {
+            yPos = y;
+        }
+        public int getX() {
+            return x;
+        }
+        public int getY() {
+            return y; 
+        }
+        public void goTo(int xPosy, int yPosy) {
+            xPosy = x;
+            yPosy = y;
+        }
+       
+
+static class MagicRobot extends Robots {
+    
+    //Here is the variables~!
+     boolean visible;
+    
+    //Argument Constructor~!
+    public void MagicRobot() {
+        visible = false;
+    }
+    //Methods ~~!
+    public void makeVisible() {
+        visible = true;
+    }
+    public void makeInvisible() {
+        visible = false;
+    }
+    public boolean isVisible() {
+        return visible;
+    }
+}
+    public static class FastRobot extends Robots {
+        //varibale
+        private int theSpeed;
+        //constructor
+        public FastRobot (int inSpeed)
+        {
+            theSpeed = inSpeed;
+        }
+        //methods
+        public void speedSet(int speedNew) {
+            theSpeed = speedNew;
+        }
+        public int speedGet() {
+            return theSpeed;
+        }
+        public void goNorth() {
+            setY(getY() + theSpeed);
+        }
+        public void goSouth() {
+            setY(getY() - theSpeed);
+        }
+        public void goEast() {
+            setX(getX() + theSpeed);
+        }
+        public void goWest() {
+            setX(getX() - theSpeed);
+        }
+    }
+    public static class VSRobot extends FastRobot {
+       public void goNorth (int hisSpeed) {
+           setY(getY()+ hisSpeed);
+       } 
+    }
+     
+
+        
+        
+      
+    public static void main (String[] args) {
+        Robots torro = new Robots();
+        Robots lorro = new Robots(2,5);
+        MagicRobot leroy = new MagicRobot();
+        leroy.goEast();
+        leroy.goNorth();
+        System.out.printf("torro x is: %d, y: %d\n",torro.getX(),torro.getY());
+        System.out.printf("lorro x is: %d, y: %d\n",lorro.getX(),lorro.getY());
+        lorro.goWest();
+        lorro.goNorth();
+        System.out.printf("lorro x is: %d, y: %d\n",lorro.getX(),lorro.getY());
+        torro.goEast();
+        torro.goSouth();
+        System.out.printf("torro x is: %d, y: %d\n", torro.getX(),torro.getY());
+        System.out.printf("MagicRobot is visible: %s\n", leroy.isVisible());
+        leroy.makeVisible();
+        System.out.printf("leroy x is: %d, y: %d\n",leroy.getX(),leroy.getY());
+        System.out.printf("MagicRobot is not visible: %s\n", leroy.isVisible());
+        FastRobot fastdetoo = new FastRobot(5);
+        Robots crawler = new Robots();
+        crawler.goNorth();
+        fastdetoo.goNorth();
+        System.out.printf("fastdetoo x is: %d, y: %d\n",fastdetoo.getX(),fastdetoo.getY());
+        System.out.printf("crawler x is: %d, y: %d\n",crawler.getX(),crawler.getY());
+        crawler.goTo(3,3);
+        fastdetoo.goTo(3, 3);
+        System.out.printf("fastdetoo x is: %d, y: %d\n",fastdetoo.getX(),fastdetoo.getY());
+        System.out.printf("crawler x is: %d, y: %d\n",crawler.getX(),crawler.getY());
+        crawler.goEast();
+        fastdetoo.goEast();
+        System.out.printf("fastdetoo x is: %d, y: %d\n",fastdetoo.getX(),fastdetoo.getY());
+        System.out.printf("crawler x is: %d, y: %d\n",crawler.getX(),crawler.getY());
+        VSRobot walker = new VSRobot(5);
+        walker.goNorth(3);
+        System.out.printf("walker x is: %d, y: %d\n",walker.getX(),walker.getY());
+    }
+}
