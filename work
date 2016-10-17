@@ -1,0 +1,70 @@
+package roboticrace;
+public class Robot {
+    // instance variable~!
+    private int x,y;
+
+    //zero argument constructor~!
+    public Robot() {
+        x=0;
+        y=0;
+    }
+    //two argument constructors~!
+    public Robot(int xPos,int yPos) {
+        xPos = x;
+        yPos = y;
+    }
+    //setters for the two variables~!
+    public void setX(int setX) {
+        setX = x;
+    }
+    public void setY(int setY) {
+        setY = y;
+    }
+    //getters for the two variables~!
+    public int getX() {
+        return x;
+    }
+    public int getY() {
+        return y;
+    }
+    //here is the methods~!
+    public void moveNorth() {
+        y = y+1;
+    }
+    public void moveSouth() {
+        y = y-1;
+    }
+    public void moveEast() {
+        x = x + 1;
+    }
+    public void moveWest() {
+        x = x - 1;
+    }
+    public void moveTo(int xPosi, int yPosi) {
+        xPosi = x;
+        yPosi = y;
+    }
+    //override toString()~!
+    public String toString() {
+         String msg;
+        return msg = "X:  " + x + "     " + "Y: " + y;
+    }
+}
+class TestRobot_M {
+    
+    public static void main (String[] args) {
+        Robot tetoo = new Robot(5,2);
+        Robot detoo = new Robot();
+        detoo.setX(3);
+        detoo.setY(10);
+        System.out.println("tetoo: " + tetoo.toString());
+        System.out.println("detoo: " + detoo.toString());
+        tetoo.moveEast();
+        tetoo.moveEast();
+        tetoo.moveEast();
+        detoo.moveSouth();
+        detoo.moveSouth();
+        System.out.println("tetoo: " + tetoo.toString());
+        System.out.println("detoo: " + detoo.toString());
+    }
+}
