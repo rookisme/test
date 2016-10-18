@@ -10,15 +10,15 @@ public class Robot {
     }
     //two argument constructors~!
     public Robot(int xPos,int yPos) {
-        xPos = x;
-        yPos = y;
+        x = xPos;
+        y = yPos;
     }
     //setters for the two variables~!
     public void setX(int setX) {
-        setX = x;
+        x = setX;
     }
     public void setY(int setY) {
-        setY = y;
+        y = setY;
     }
     //getters for the two variables~!
     public int getX() {
@@ -41,13 +41,77 @@ public class Robot {
         x = x - 1;
     }
     public void moveTo(int xPosi, int yPosi) {
-        xPosi = x;
-        yPosi = y;
+        x = xPosi;
+        y = yPosi;
     }
     //override toString()~!
     public String toString() {
          String msg;
         return msg = "X:  " + x + "     " + "Y: " + y;
+    }
+}
+class MagicRobot extends Robot {
+    //variable~!
+    private boolean visible;
+    //zero argument constructor
+    public MagicRobot() {
+        visible = false;
+    }
+    //methods~!
+    public void makeVisible() {
+        visible = true;
+    }
+    public void makeInvisible() {
+        visible = false;
+    }
+    public boolean isVisible() {
+        return visible;
+    }
+    public String toString() {
+        String msg;
+        String visibleZ;
+         if (visible == false) {
+             visibleZ = "invisible";
+         }
+         else {
+             visibleZ = "visible";
+         }
+        return msg = "X: " + getX() + "    " + " Y: " + getY() + ",      " + " and it is " + visibleZ;
+    }
+    
+}
+class SpeedRobot extends Robot {
+    //variable~!
+    private int speed;
+    //zero argument constructor~!
+    public SpeedRobot() {
+        
+    }
+    //one argument constructor~!
+    public SpeedRobot(int theSpeed) {
+        speed = theSpeed;
+    }
+    public void setSpeed(int sSpeed) {
+        speed = sSpeed;
+    }
+    public int getSpeed() {
+        return speed;
+    }
+    public void moveNorth() {
+        setY(getY()+speed);
+    }
+    public void moveSouth() {
+        setY(getY()-speed);
+    }
+    public void moveEast() {
+        setX(getX()+speed);
+    }
+    public void moveWest() {
+        setX(getX()-speed);
+    }
+    public String toString() {
+        String msg; 
+        return msg = "X: " + getX() + "     " + ",Y: " + getY() + "    "+ " and its speed is   " + getSpeed();
     }
 }
 class TestRobot_M {
@@ -66,5 +130,24 @@ class TestRobot_M {
         detoo.moveSouth();
         System.out.println("tetoo: " + tetoo.toString());
         System.out.println("detoo: " + detoo.toString());
+        MagicRobot medoo = new MagicRobot();
+        System.out.println(medoo.toString());
+        medoo.setX(3);
+        medoo.setY(5);
+        System.out.println(medoo.toString());
+        medoo.makeVisible();
+        System.out.println(medoo.toString());
+        medoo.moveTo(9, 11);
+        System.out.println(medoo.toString());
+        SpeedRobot speedoo = new SpeedRobot(5);
+        System.out.println(speedoo.toString());
+        speedoo.moveNorth();
+        speedoo.moveNorth();
+        speedoo.moveWest();
+        speedoo.moveWest();
+        speedoo.setSpeed(10);
+        System.out.println(speedoo.toString());
+        speedoo.moveTo(4, 5);
+        
     }
 }
