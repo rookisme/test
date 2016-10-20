@@ -114,6 +114,26 @@ class SpeedRobot extends Robot {
         return msg = "X: " + getX() + "     " + ",Y: " + getY() + "    "+ " and its speed is   " + getSpeed();
     }
 }
+class VSRobot extends SpeedRobot {
+ 
+    //zero Argument constructor~!
+    public VSRobot() {
+        
+    }
+    public void moveNorth(int newSpeed) {
+    setY(getY() + newSpeed);    
+    }
+    public void moveSouth(int newSpeed) {
+    setY(getY() - newSpeed);
+    }
+    public void moveEast(int newSpeed) {
+        setX(getX() + newSpeed);
+    }
+    public void moveWest(int newSpeed) {
+        setX(getX()- newSpeed);
+    }
+    
+}
 class TestRobot_M {
     
     public static void main (String[] args) {
@@ -148,6 +168,19 @@ class TestRobot_M {
         speedoo.setSpeed(10);
         System.out.println(speedoo.toString());
         speedoo.moveTo(4, 5);
-        
+        VSRobot vspeedoo = new VSRobot();
+        System.out.println(vspeedoo.toString());
+        vspeedoo.moveNorth();
+        vspeedoo.moveEast();
+        System.out.println(vspeedoo.toString());
+        vspeedoo.setSpeed(2);
+        vspeedoo.moveNorth();
+        vspeedoo.moveEast();
+        System.out.println(vspeedoo.toString());
+        vspeedoo.moveNorth(10);
+        vspeedoo.moveEast(10);
+        System.out.println(vspeedoo.toString());
+        vspeedoo.moveTo(4, 5);
+        System.out.println(vspeedoo.toString());
     }
 }
