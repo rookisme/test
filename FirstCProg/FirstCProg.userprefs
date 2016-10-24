@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="FirstCProg/FirstCProg.csproj">
+  <MonoDevelop.Ide.ItemProperties.FirstCProg PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="FirstCProg/Classes.cs">
+    <Files>
+      <File FileName="FirstCProg/Program.cs" Line="1" Column="3" />
+      <File FileName="FirstCProg/EmptyCSharpFile.cs" Line="1" Column="1" />
+      <File FileName="FirstCProg/Classes.cs" Line="17" Column="14" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
