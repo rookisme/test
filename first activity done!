@@ -182,5 +182,32 @@ class TestRobot_M {
         System.out.println("vspeedoo: " + vspeedoo.toString());
         vspeedoo.moveTo(4, 5);
         System.out.println("vspeedoo: " + vspeedoo.toString());
+                Robot t1 = new Robot();
+        Robot t2 = new Robot(2,8);
+        
+        MagicRobot t3 = new MagicRobot();
+        t3.moveTo(1, 3);
+        t3.makeVisible();
+        
+        SpeedRobot t4 = new SpeedRobot();
+        t4.setSpeed(5);
+        
+        VSRobot t5 = new VSRobot();
+        t5.moveNorth(4);
+        t5.moveWest(7);
+        
+        Robot [] myRobots = new Robot[5];
+        myRobots[0] = t1;
+        myRobots[1] = t2;
+        myRobots[2] = t3;
+        myRobots[3] = t4;
+        myRobots[4] = t5;
+        
+        for(int i=0; i<5; i++) {
+            System.out.println("t: " + (i+1) + myRobots[i].toString());
+        }
+        System.out.println("Foreach:");
+        for(Robot robotArr: myRobots)
+            System.out.println(robotArr.toString());
     }
 }
