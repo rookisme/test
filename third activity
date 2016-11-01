@@ -1,0 +1,49 @@
+
+public class User {
+
+    //variables~!
+    private String userID, emailAddress;
+    private int numOfAccesses;
+    static int counter;
+    
+    //constructor
+    public User (String id, String email, int num) {
+        userID = id;
+        emailAddress = email;
+        numOfAccesses = num;
+        counter++;
+    }
+
+    //constructor
+    public User() {
+         new User(" ", " ", 0);
+    }
+
+    //constructor
+    public User(int numba,  String tehEmail) {
+        new User("", tehEmail, numba);
+    }
+
+    //setters~!
+    public void setUserID (String id) {
+        userID = id;
+    }
+    public void setEmailAddress(String email) {
+        emailAddress = email;
+    }
+    
+    //getters~!
+    public String getUserID() {
+        return userID;
+    }
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+    public int getNumOfAccesses() {
+        return numOfAccesses;
+    }
+    
+    public void updatesNumberOfAccesses() {
+        numOfAccesses++;
+    }
+}
